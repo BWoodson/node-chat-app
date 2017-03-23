@@ -36,6 +36,11 @@ io.on('connection', (socket) => {
   
     callback();
   });
+  
+  socket.on('loadRooms', (callback) => {
+    var rooms = users.getRoomList();
+    callback(rooms);
+  })
 
   socket.on('createMessage', (message, callback) => {
     var user = users.getUser(socket.id);

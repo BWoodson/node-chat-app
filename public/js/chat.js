@@ -36,13 +36,13 @@ socket.on('disconnect', function () {
 
 socket.on('updateUserList', function (users) {
   console.log('Users list', users);
-  var ol = jQuery('<ol></ol>');
+  var ul = jQuery('<ul></ul>');
   
   users.forEach(function(user) {
-    ol.append(jQuery('<li></li>').text(user));
+    ul.append(jQuery('<li></li>').text(user));
   });
   
-  jQuery('#users').html(ol);
+  jQuery('#users').html(ul);
 });
 
 socket.on('newMessage', function(message) {

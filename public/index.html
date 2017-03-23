@@ -18,12 +18,25 @@
         </div>
         <div class="form-field">
           <label>Room name</label>
-          <input type="text" name="room" />
+          <select name="room-select" id="room-select">
+            <option value="default" selected>Choose a room</option>
+            <option value="create">Create a room</option>
+          </select>
+          <input type="text" id="room" name="room" />
         </div>
         <div class="form-field">
           <button>Join</button>
         </div>
       </form>
     </div>
+    
+    <script id="room-option-template" type="text/template">
+      <option value="{{room}}">{{room}}</option>
+    </script>
+    
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="/js/libs/jquery-3.1.1.min.js"></script>
+    <script src="/js/libs/mustache.js"></script>
+    <script src="/js/index.js"></script>
   </body>
 </html>
